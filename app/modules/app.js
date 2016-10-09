@@ -1,0 +1,1 @@
+var appModule = angular.module('nitroApp',['serverServiceModule','appLocaleDataModule','dataRepoModule','searchModule','spinnerMoule']);

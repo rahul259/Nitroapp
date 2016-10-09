@@ -1,0 +1,154 @@
+<!doctype html>
+<html ng-app="nitroApp">
+	<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <!-- <script type="text/javascript" src="../gruntFile.js"></script>
+        <script type="text/javascript" src="../lib/jquery-1.12.3.min.js"></script>
+        <linl rel="stylesheet" href="..lib/jquery-ui.min.css"/>
+        <script type="text/javascript" src="../lib/angular/angular.js"></script>
+        
+        
+        <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css"/>
+        <script type="text/javascript" src="../lib/bootstrap/dist/js/bootstrap.js"></script>-->
+        
+        
+         <!-- bower:css -->
+         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+         <!-- endbower -->
+        
+      
+        
+        
+      <link rel="stylesheet" href="style.css"/>
+	</head>
+	
+	 <body ng-controller="homeCtrl">
+       <div class="row1 header">
+           <span class="logo"></span>
+           <span class="nitro">{{::localeString.nitro}}</span>
+           <span class="cart">{{::localeString.cart}}</span>
+           <span class="slogan">{{::localeString.slogan}}</span>
+         
+       </div>
+       <div class="row2 contentarea">
+           <div class="utilityrow">
+              <div class="col-md-6 col-sm-6 col-xs-12 search">
+                <search-dir></search-dir>
+               </div>
+               
+               <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-4 col-xs-12 sort">
+                    <label class="col-md-8 col-xs-6 sortlabel">{{::localeString.Sortby}}</label>
+                    <div class="sortradios col-md-4 col-xs-6">
+                        <div class="radio">
+                          <label><input type="radio" ng-model="sortBy.name" name="optradio" value="rating">{{::localeString.ratings}}</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" ng-model="sortBy.name" name="optradio" value="likes">{{::localeString.likes}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-12 stats">
+                    <div class="col-md-6 col-xs-6"><label>{{::localeString.totalLikes}}</label>{{totalLikes}}</div>
+                    <div class="col-md-6 col-xs-6 apihits"><label>{{::localeString.totalApi}}</label>{{dataHits}}</div>
+                </div>
+               </div>
+           
+           </div>
+           
+           
+           
+           
+           
+           <div class="content">
+              <div ng-repeat="item in items|filter:searchitem | orderBy:sortBy.name:true" class="container col-md-6 col-xs-12">
+                  <div class="item container-well">
+                     <div class="col-md-4 col-xs-12 item-image">
+                       <img ng-src="{{item.image}}" alt="No Image"/>
+                    </div>
+                     <div class="col-md-8 col-xs-12 item-details">
+                         
+                         
+                         
+                         <div class="row name">
+                             {{item.name}}
+                         </div> 
+                         
+                         <div class="row">
+                            <label>{{::localeString.purchasedBy}}</label>{{item.purchased_by}}
+                         </div> 
+                         
+                         
+                         <div class="row">
+                             <div class="col-md-5 col-xs-6">
+                                 
+                               <span class="coins">&nbsp;&nbsp;</span> <span>&#8377;&nbsp;{{item.price}}</span>
+                                
+                             </div>
+                             <div class="col-md-7 col-xs-6 rating-widget">
+                                <div class="rating col-md-2 col-xs-2">
+                                 {{item.rating}}
+                                </div>
+                               <div class="stars col-md-10 col-xs-10">
+
+                                    <div class="rated" ng-style="{width:getStars(item.rating)}"></div>
+                                 </div>
+                             </div>
+                           
+                         </div> 
+                         
+                         
+                         
+                         <div class="row tagged">
+                         <icon class="glyphicon glyphicon-tag col-md-1 col-xs-5"></icon>
+                          <div class="col-md-9 col-xs-7 tagName">{{getTags(item)}}</div>
+                         </div> 
+                         
+                         
+                         
+                         <div class="row linkrow">
+                            <icon class="glyphicon glyphicon-link col-md-1 col-xs-1"></icon>
+                            <label class="col-md-2 col-xs-2">{{::localeString.link}}</label><a class="col-md-7" ng-href="{{item.link}}" target="_blank">{{item.link}}</a>
+                            <div class="col-md-4 col-xs-4 like" ng-click="addLikes(item)">
+                              <icon class="col-md-5 col-xs-5 glyphicon glyphicon-thumbs-up"></icon> 
+                              <div class="col-md-6 col-xs-6">{{item.likes}}</div>
+                             
+                            </div>
+                         </div>
+                         
+                     </div>
+                  
+                  </div>
+               </div>
+               
+               
+                    <div class="col-md-12 loadmore">
+                        <div class=" glyphicon glyphicon-download" ng-click="refreshDealData()"></div>
+               
+                   </div>
+           </div>
+       </div>
+        
+        <div class="mask">
+        <div class="spinner"></div> 
+        </div>
+
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+        <!-- endbower -->
+        
+        <script src="modules/app.js"></script>
+        <script src="modules/shared/locale/localeDataModule.js"></script>
+         <script src="modules/shared/spinner/spinnerService.js"></script>
+        <script src="modules/shared/locale/appLocaleData.js"></script>
+         <script src="modules/shared/datarepo/dataRepo.js"></script>
+         <script src="modules/shared/serverservice/serverServiceModule.js"></script>
+         <script src="modules/shared/serverservice/serverService.js"></script>
+         <script src="modules/homeModule/home.controller.js"></script>
+         <script src="modules/shared/searchdirective/searchModule.js"></script>
+         <script src="modules/shared/searchdirective/search.directive.js"></script>
+	 </body>
+</html>

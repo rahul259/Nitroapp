@@ -1,0 +1,25 @@
+{
+  "name": "nitro",
+  "version": "1.0.0",
+  "description": "Nitro e commerce app",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Sapient",
+    "nitro",
+    "e",
+    "commerce"
+  ],
+  "author": "rahul",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-serve": "^0.1.6",
+    "grunt-wiredep": "^3.0.1"
+  }
+}

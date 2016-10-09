@@ -1,0 +1,1 @@
+var serverServiceModule = angular.module('serverServiceModule',['appLocaleDataModule']);

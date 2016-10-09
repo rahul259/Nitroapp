@@ -1,0 +1,274 @@
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  margin: 25% auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out; }
+
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); } }
+#custom-search-input {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0; }
+
+#custom-search-input .search-query {
+  padding-right: 3px;
+  padding-right: 4px \9;
+  padding-left: 3px;
+  padding-left: 4px \9;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
+#custom-search-input button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: relative;
+  left: -28px;
+  z-index: 5;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: lightgray; }
+
+.search-query:focus + button {
+  z-index: 3; }
+
+.ui-widget {
+  width: 46% !important;
+  background: #fcf8e3;
+  padding: 0.5em;
+  height: 15em;
+  overflow-y: scroll; }
+  .ui-widget .ui-menu-item {
+    color: grey;
+    font-size: larger; }
+
+.ui-helper-hidden-accessible {
+  display: none; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+body {
+  overflow-y: scroll; }
+  body .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d35400;
+    opacity: 0.96;
+    z-index: 13; }
+
+a {
+  overflow: hidden;
+  height: 100%;
+  padding: 0 !important;
+  line-height: 1.6em;
+  align-items: center;
+  text-overflow: ellipsis; }
+
+body {
+  background: url("images/weather.png"); }
+  body .row1.header {
+    height: 20%;
+    padding: 1em;
+    width: 100%;
+    border-bottom: solid 1px;
+    background: url("images/header.png");
+    top: 0; }
+    @media only screen and (max-width: 959px) {
+      body .row1.header {
+        height: 10%; } }
+    body .row1.header .logo {
+      background-image: url("images/logo.png");
+      background-position: bottom;
+      background-repeat: no-repeat;
+      display: inline-block;
+      height: 100%;
+      width: 4em; }
+      @media only screen and (max-width: 959px) {
+        body .row1.header .logo {
+          height: auto;
+          width: auto;
+          background-image: none; } }
+    body .row1.header .nitro {
+      display: inline-block;
+      font-size: 600%;
+      font-weight: bold;
+      color: orangered; }
+      @media only screen and (max-width: 959px) {
+        body .row1.header .nitro {
+          font-size: 200%; } }
+    body .row1.header .cart {
+      display: inline-block;
+      font-size: 400%;
+      font-weight: bold;
+      color: grey; }
+      @media only screen and (max-width: 959px) {
+        body .row1.header .cart {
+          font-size: 150%; } }
+    body .row1.header .slogan {
+      display: inline-block;
+      font-size: 100%;
+      font-weight: bold;
+      color: orangered; }
+  body .row2 {
+    height: 80%;
+    width: 100%; }
+    body .row2 .utilityrow {
+      height: 10%;
+      width: 100%; }
+      @media only screen and (max-width: 959px) {
+        body .row2 .utilityrow .search {
+          margin-bottom: 2%; } }
+      body .row2 .utilityrow .sort {
+        border: solid 2px grey;
+        border-radius: 5px;
+        margin-top: 0.7em; }
+        body .row2 .utilityrow .sort .sortlabel {
+          font-size: 2em;
+          line-height: 2em;
+          color: grey;
+          padding: 0; }
+        body .row2 .utilityrow .sort div {
+          padding: 0; }
+      body .row2 .utilityrow .stats {
+        font-size: 1em;
+        background: pink;
+        margin-top: 0.7em;
+        border-radius: 10px; }
+        @media only print, only screen and (min-width: 960px) {
+          body .row2 .utilityrow .stats {
+            margin-left: 45px; } }
+        body .row2 .utilityrow .stats .apihits {
+          border-left: solid 1px grey; }
+    body .row2 .content {
+      height: 90%;
+      width: 100%; }
+      body .row2 .content .loadmore {
+        position: relative;
+        bottom: 0;
+        float: left;
+        width: 100%; }
+        body .row2 .content .loadmore div {
+          margin: auto;
+          width: 5em;
+          display: block;
+          font-size: 4em;
+          text-align: Center;
+          color: grey; }
+    body .row2 .item:hover {
+      box-shadow: 5px 5px 5px #888888;
+      width: 98%; }
+    body .row2 .item {
+      background: white;
+      display: inline-block;
+      margin: 1em 0;
+      border-radius: 10px;
+      max-width: 100%;
+      width: 100%; }
+      @media only screen and (max-width: 959px) {
+        body .row2 .item {
+          text-align: center; } }
+      body .row2 .item .item-image {
+        height: 90%;
+        margin-top: 0.5em;
+        background: white;
+        border-bottom-left-radius: 10px; }
+        body .row2 .item .item-image img {
+          height: 100%;
+          padding: 1em;
+          width: 100%;
+          max-height: 10em;
+          max-width: 10em; }
+      body .row2 .item .item-details {
+        height: 100%;
+        padding-top: 3%; }
+        body .row2 .item .item-details .row {
+          height: 20%;
+          overflow: hidden;
+          position: relative; }
+          body .row2 .item .item-details .row .like {
+            height: 100%;
+            width: 5em;
+            background: lightgrey;
+            position: absolute;
+            right: 0;
+            font-size: 1em;
+            padding: 0.25em; }
+            @media only screen and (max-width: 959px) {
+              body .row2 .item .item-details .row .like {
+                top: 1px; } }
+          body .row2 .item .item-details .row span.coins:before {
+            content: url("images/coins.png");
+            font-size: 0.5em; }
+        body .row2 .item .item-details .row.name {
+          color: skyblue;
+          font-weight: bold;
+          font-size: larger; }
+        body .row2 .item .item-details .row.linkrow {
+          max-height: 2em; }
+          @media only screen and (max-width: 959px) {
+            body .row2 .item .item-details .row.linkrow {
+              text-align: left; } }
+        @media only screen and (max-width: 959px) {
+          body .row2 .item .item-details .row.tagged {
+            margin-top: 2px; }
+            body .row2 .item .item-details .row.tagged .tagName {
+              text-align: left; } }
+        body .row2 .item .item-details .row .rating {
+          padding: 0 0.3em;
+          font-size: 0.9em;
+          color: orange;
+          font-weight: bold;
+          border-left: solid 1px black;
+          height: 80%; }
+        body .row2 .item .item-details .row .rating-widget {
+          padding: 0; }
+        body .row2 .item .item-details .row .ratings {
+          margin: 0; }
+        body .row2 .item .item-details .row .stars {
+          position: relative;
+          width: 80px;
+          height: 16px;
+          background-image: url("images/stars.png");
+          background-repeat: repeat-x;
+          background-position: 0 -16px;
+          padding: 0; }
+          body .row2 .item .item-details .row .stars .rated {
+            position: absolute;
+            left: 0;
+            height: 100%;
+            background-image: url("images/stars.png");
+            background-repeat: repeat-x;
+            background-position: 0 0; }
+
+/*# sourceMappingURL=style.css.map */

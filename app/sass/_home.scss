@@ -1,0 +1,277 @@
+html,body{
+    height:100%;
+    width:100%;
+}
+body{
+    overflow-y: scroll;
+    .mask{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #d35400;
+        opacity: 0.96;
+        z-index: 13;
+    }
+}
+div{
+   // border: solid 1px;
+   // height:100%;
+}
+a{
+    overflow: hidden;
+    height: 100%;
+    padding: 0 !important;
+    line-height: 1.6em;
+    align-items: center;
+    text-overflow: ellipsis;
+}
+
+icon{
+   // padding: 0 !important;
+}
+icon+div{
+   // padding: 0 !important;
+}
+body{
+    background: $body-background;
+    .row1.header{
+       height:20%;
+       @media #{$phone}{
+             height:10%;
+        }
+       padding: 1em;
+       width: 100%;
+       border-bottom: solid 1px;
+       background: $header;
+       top:0;
+        .logo{
+            background-image: $logo;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            display: inline-block;
+            height:100%;
+            width:4em;
+            @media #{$phone}{
+                 height:auto;
+                 width:auto;
+                 background-image: none;
+            }
+             
+        }
+        .nitro{
+            display: inline-block;
+            font-size: 600%;
+            font-weight: bold;
+            color:orangered;
+            @media #{$phone}{
+                 font-size: 200%;
+            }
+             
+        }
+        .cart{
+            display: inline-block;
+            font-size: 400%;
+            font-weight: bold;
+            color: grey;
+             @media #{$phone}{
+                 font-size: 150%;
+            }
+        }
+        .slogan{
+            display: inline-block;
+            font-size: 100%;
+            font-weight: bold;
+            color:orangered;
+        }
+    }
+    
+    .row2{
+        height: 80%;
+        width: 100%;
+        .utilityrow{
+            height: 10%;
+            width: 100%;
+            .search{
+                @media #{$phone}{
+                  margin-bottom: 2%;
+                }
+            }
+            .sort{
+                 border: solid 2px grey;
+                 border-radius: 5px;
+                 margin-top: 0.7em;
+                 .sortlabel{
+                    font-size: 2em;
+                    line-height: 2em;
+                    color: grey;
+                     padding: 0;
+                }
+                div{
+                    padding: 0;
+                }
+            }
+           
+            .stats{
+                    font-size: 1em;
+                    background: pink;
+                    margin-top: 0.7em;
+                    
+                    border-radius: 10px;
+                    @media #{$desktop}{
+                        margin-left: 45px;
+                    }
+                .apihits{
+                    border-left: solid 1px grey;
+                }
+            }
+        }
+        .content{
+            height:90%;
+            //overflow: scroll;
+            width: 100%;
+            .loadmore{
+                position: relative;
+                bottom: 0;
+                float: left;
+                width: 100%;
+                
+                div{
+                        margin: auto;
+                        width: 5em;
+                        display: block;
+                        font-size: 4em;
+                        text-align: Center;
+                        color: grey;
+                }
+            }
+        }
+        
+        .item:hover{
+            box-shadow: 5px 5px 5px #888888;
+           width: 98%;
+        }
+        
+        .item{
+            //height: 10em;
+            background: white;
+            display: inline-block;
+            margin: 1em 0;
+            border-radius: 10px;
+            max-width: 100%;
+            width: 100%;
+            //background: lightgrey;
+            @media #{$phone}{
+                text-align: center;
+            }
+            .item-image{
+                height: 90%;
+                margin-top: 0.5em;
+                background: white;
+                border-bottom-left-radius: 10px;
+                
+                img{
+                    height: 100%;
+                    padding: 1em;
+                    width: 100%;
+                    max-height: 10em;
+                    max-width: 10em;
+                }
+            }
+            .item-details{
+                height:100%;
+                padding-top: 3%;
+                .row{
+                    height: 20%;
+                    //max-height: 2em;
+                    overflow: hidden;
+                    position: relative;
+                    
+                    .like{
+                            height:100%;
+                            width: 5em;
+                            background: lightgrey;
+                            position: absolute;
+                            right:0;
+                            font-size: 1em;
+                            padding: 0.25em;
+                            @media #{$phone}{
+                                top:1px;
+                            }
+                             
+
+                        }
+   
+                    span.coins:before{
+                        content: $coins;
+                        font-size: 0.5em;
+                    }
+                 }
+                                 
+                .row.name{
+   
+                                color: skyblue;
+                                font-weight: bold;
+                                font-size: larger;
+                }
+                .row.linkrow{
+                    max-height: 2em;
+                    @media #{$phone}{
+                        text-align:left;
+                    }
+                }
+                
+                @media #{$phone}{
+                       .row.tagged{
+                            margin-top: 2px;
+                           .tagName{
+                               text-align:left;
+                           }
+                        }
+                }
+                
+                
+                .row{
+                    
+                    
+                    .rating{
+                        padding: 0 0.3em;
+                        font-size: 0.9em;
+                        color:orange;
+                        font-weight: bold;
+                        border-left: solid 1px black;
+                        height: 80%;
+                    }
+                    
+                    .rating-widget{
+                        padding: 0;
+                    }
+                    .ratings{
+                        margin: 0;
+                    }
+                    .stars{
+                       position: relative;
+                       width: 80px;
+                       height: 16px;
+                       background-image: $star;
+                       background-repeat: repeat-x;
+                       background-position: 0 -16px;
+                       padding: 0;
+                        .rated{
+                            position: absolute;
+                            left:0;
+                            height: 100%;
+                            background-image: $star;
+                            background-repeat: repeat-x;
+                            background-position: 0 0;
+                            
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    
+}
