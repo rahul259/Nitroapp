@@ -5,7 +5,6 @@ describe("Tests for Home Controller", function(){
     
     var $controller;
     beforeEach(inject(function(_$controller_){
-        debugger;
        $controller = _$controller_;
     }));
  describe('testing $scope.totalLikes', function(){
@@ -15,8 +14,14 @@ describe("Tests for Home Controller", function(){
          controller = $controller('homeCtrl',{$scope:$scope});
      });
      
-     it('sets totalLikes to 0', function(){
+     it('initialise totalLikes to 0', function(){
          expect($scope.totalLikes).toEqual(0);
      });
+     it('initialize tagsList to be empty array', function(){
+         expect($scope.tagsList).toEqual([]);
+     });
+     it('locale data is setup',function(){
+         expect($scope.localeString.cart).toEqual('Cart');
+     })
  })
 });
