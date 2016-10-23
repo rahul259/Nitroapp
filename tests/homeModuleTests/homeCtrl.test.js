@@ -1,3 +1,5 @@
+'use strict';
+
 describe("Tests for Home Controller", function(){
     beforeEach(module('nitroApp'));
     
@@ -16,5 +18,5 @@ describe("Tests for Home Controller", function(){
      it('sets totalLikes to 0', function(){
          expect($scope.totalLikes).toEqual(0);
      });
- });
+ })
 });

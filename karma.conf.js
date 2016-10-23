@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './app',
 
 
     // frameworks to use
@@ -15,8 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'lib/angular/angular.min.js',
-      'lib/angular/angular-mocks.js',
+      'bower_components/jquery/dist/jquery.js',
+      'bower_components/angular/angular.js',
+      'bower_components/angular-mocks/angular-mocks.js',
       "modules/shared/locale/appLocaleDataModule.js",
         "modules/shared/spinner/spinnerService.js",
        "modules/shared/locale/appLocaleData.js",
@@ -27,7 +28,7 @@ module.exports = function(config) {
         "modules/shared/searchdirective/search.directive.js",
 		"modules/app.js",
         "modules/homeModule/home.controller.js",
-      'tests/**/*.test.js'
+      '../tests/**/*.test.js'
     ],
 
 
